@@ -95,6 +95,18 @@ This is a RESTful API service built with Go-FIBER.
     ```
 
 ## UNIT TEST
+## FOR LINUX
+  Generate Unit Test:
+  - change folder backend
+    ```shell
+      cd backend
+    ```
+  - running unit test
+    ```shell
+      ./unitTest.sh
+    ```
+
+## FOR WINDOWS
 Generate Unit Test:
   - change folder backend
     ```shell
