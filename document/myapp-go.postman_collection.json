@@ -1,0 +1,812 @@
+{
+	"info": {
+		"_postman_id": "bb98efd5-e26b-46ed-8bd0-71f75d43c8d1",
+		"name": "myapp-go",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10702054"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "users",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/v1/users?limit=10&page=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"users"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "auth/register",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"username\": \"mumun\",\r\n  \"email\": \"mumun@example.com\",\r\n  \"password\": \"securepassword\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "auth/login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@example.com\",\r\n    \"password\": \"today1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "auth/logout",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"sessionid\": \"de7c20d3-5342-4ff4-ac45-3e6246922ed\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/v1/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "customer",
+			"item": [
+				{
+					"name": "/customer/create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDUyNDExMDMsInVzZXJfaWQiOiI4ZGEzOGNmYS1kZWJkLTRkYzItYThkMS00OTI5MGNmYzlkYTEifQ.1oZCgt2RRhk_8kr37xT2pioHv0YWoCJ8wS0NKuINWvo",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test11@email.com\",\r\n    \"username\": \"testsebelas\",\r\n\t\"full_name\": \"bosep sebelas\",\r\n\t\"phone_number\": \"083808682483\",\r\n\t\"date_of_birth\": \"1996-07-07\",\r\n\t\"address\": \"Jakarta\",\r\n    \"account_type\": \"saving\",\r\n    \"balance\": 100000,\r\n    \"currency\": \"IDR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/v1/customer/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"customer",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/customer/me",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDI1Mzg2OTQsInVzZXJfaWQiOiJmMjM2NDljNy03ZGY4LTQ4NDYtYTYxMC01ZmY3M2I1OGQ4MjcifQ.PSd3MyBtxMSFHl8OgXtz5eTb6UeJuxepEnPEkfsYY3g",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/v1/customer/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"customer",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/customer",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/v1/customer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"customer"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "search",
+									"value": "bosep",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/customer/update/:id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDUyNDExMDMsInVzZXJfaWQiOiI4ZGEzOGNmYS1kZWJkLTRkYzItYThkMS00OTI5MGNmYzlkYTEifQ.1oZCgt2RRhk_8kr37xT2pioHv0YWoCJ8wS0NKuINWvo",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test10@email.com\",\r\n    \"username\": \"testsepuluh\",\r\n\t\"full_name\": \"bosep sepuluh\",\r\n\t\"phone_number\": \"083808682485\",\r\n\t\"date_of_birth\": \"1996-07-09\",\r\n\t\"address\": \"Semarang\",\r\n    \"account_type\": \"saving\",\r\n    \"currency\": \"IDR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/v1/customer/update/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"v1",
+								"customer",
+								"update",
+								":id"
+							],
+							"query": [
+								{
+									"key": "Auth",
+									"value": null,
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3fb7d0df-165c-45f6-8616-1b8e7e99ed30"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "bank_account",
+			"item": [
+				{
+					"name": "/bank_account/create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDI1Mzg2OTQsInVzZXJfaWQiOiJmMjM2NDljNy03ZGY4LTQ4NDYtYTYxMC01ZmY3M2I1OGQ4MjcifQ.PSd3MyBtxMSFHl8OgXtz5eTb6UeJuxepEnPEkfsYY3g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    // \"account_number\": \"1202012903\",\r\n    \"account_type\": \"saving\",\r\n    \"balance\": 50000,\r\n    \"Currency\": \"IDR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/v1/bank_account/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"bank_account",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/bank_account/lists",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDI4Njc2NzUsInVzZXJfaWQiOiJmMjM2NDljNy03ZGY4LTQ4NDYtYTYxMC01ZmY3M2I1OGQ4MjcifQ.D6CqSHtR2ISHxT2oEg5LnXgDCYKazO1KNRfC5GsGKHY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/v1/bank_account/lists?page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"bank_account",
+								"lists"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/bank_account/update/:id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDI2MTU1MTYsInVzZXJfaWQiOiJmMjM2NDljNy03ZGY4LTQ4NDYtYTYxMC01ZmY3M2I1OGQ4MjcifQ.t44YZS1u5FA9IDTwuktj7j3eP-ejDDP22SLUeugbakI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"account_number\": \"1202012904\",\r\n    \"account_type\": \"savingg\",\r\n    \"balance\": 120000,\r\n    \"Currency\": \"DOLLAR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/v1/bank_account/update/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"bank_account",
+								"update",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "a586845f-2108-4365-9948-8271e6afee7f"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/bank_account/detail/:id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDI2MTU1MTYsInVzZXJfaWQiOiJmMjM2NDljNy03ZGY4LTQ4NDYtYTYxMC01ZmY3M2I1OGQ4MjcifQ.t44YZS1u5FA9IDTwuktj7j3eP-ejDDP22SLUeugbakI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/v1/bank_account/detail/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"bank_account",
+								"detail",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "289da627-74a0-4884-8fb9-871f90ad1153"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/bank_account/delete/:id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDI2MTU1MTYsInVzZXJfaWQiOiJmMjM2NDljNy03ZGY4LTQ4NDYtYTYxMC01ZmY3M2I1OGQ4MjcifQ.t44YZS1u5FA9IDTwuktj7j3eP-ejDDP22SLUeugbakI",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/v1/bank_account/delete/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"bank_account",
+								"delete",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "a586845f-2108-4365-9948-8271e6afee7f"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pocket",
+			"item": [
+				{
+					"name": "/pocket/lists/:id",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDI4Njc2NzUsInVzZXJfaWQiOiJmMjM2NDljNy03ZGY4LTQ4NDYtYTYxMC01ZmY3M2I1OGQ4MjcifQ.D6CqSHtR2ISHxT2oEg5LnXgDCYKazO1KNRfC5GsGKHY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/v1/pocket/lists/:bankaccountid?page=1&limit=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"pocket",
+								"lists",
+								":bankaccountid"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							],
+							"variable": [
+								{
+									"key": "bankaccountid",
+									"value": "d7104486-dede-407e-aef1-0ad7842b3930"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/pocket/create",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDUyMjAxMDQsInVzZXJfaWQiOiIyNzA2MDkzYS0yZTVjLTRmOWQtODRiNC0yYzk2NGU1NjdmM2EifQ.HmKeOyitUVddTeXL4Crq0hUZnSvKLT4EESEo7aEc0Gk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"bank_account_id\": \"92d0546e-261b-4e1f-ab2c-756ffbd08542\",\r\n\t\"pocket_name\": \"nikah\",\r\n\t\"balance\": 10000,\r\n\t\"goal_amount\": 100000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/v1/pocket/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"pocket",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/pocket/update/:pocketId",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDI4Njc2NzUsInVzZXJfaWQiOiJmMjM2NDljNy03ZGY4LTQ4NDYtYTYxMC01ZmY3M2I1OGQ4MjcifQ.D6CqSHtR2ISHxT2oEg5LnXgDCYKazO1KNRfC5GsGKHY",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"pocket_name\": \"liburan ke bali\",\r\n\t\"balance\": 20000,\r\n\t\"goal_amount\": 200000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/v1/pocket/update/:pocketId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"v1",
+								"pocket",
+								"update",
+								":pocketId"
+							],
+							"variable": [
+								{
+									"key": "pocketId",
+									"value": "e2205d90-4c5e-4a9f-893a-3804ef8876bc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/pocket/detail/:pocketId",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDI4Njc2NzUsInVzZXJfaWQiOiJmMjM2NDljNy03ZGY4LTQ4NDYtYTYxMC01ZmY3M2I1OGQ4MjcifQ.D6CqSHtR2ISHxT2oEg5LnXgDCYKazO1KNRfC5GsGKHY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/v1/pocket/detail/:pocketId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"pocket",
+								"detail",
+								":pocketId"
+							],
+							"variable": [
+								{
+									"key": "pocketId",
+									"value": "e2205d90-4c5e-4a9f-893a-3804ef8876bc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/pocket/delete/:pocketId",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NDI4Njc2NzUsInVzZXJfaWQiOiJmMjM2NDljNy03ZGY4LTQ4NDYtYTYxMC01ZmY3M2I1OGQ4MjcifQ.D6CqSHtR2ISHxT2oEg5LnXgDCYKazO1KNRfC5GsGKHY",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/v1/pocket/delete/:pocketId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"pocket",
+								"delete",
+								":pocketId"
+							],
+							"variable": [
+								{
+									"key": "pocketId",
+									"value": "89d33a17-54f4-48c3-a305-607d7199da31"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
