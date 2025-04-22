@@ -26,18 +26,6 @@ const menuItems = [
     title: "OTHER",
     items: [
       {
-        icon: <User size={20}/>,
-        label: "Profile",
-        href: "/profile",
-        visible: ["admin", "customer"],
-      },
-      {
-        icon: <Cog size={20}/>,
-        label: "Settings",
-        href: "/settings",
-        visible: ["admin", "customer"],
-      },
-      {
         icon: <LogOut size={20}/>,
         label: "Logout",
         href: "/logout",

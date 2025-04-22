@@ -29,10 +29,10 @@ This is a RESTful API service built with Go-FIBER.
     ```shell
     http://localhost:8000
     ```
-3. URL ENV
+3. URL FRONTEND
 
     ```shell
-    http://localhost:3000
+    http://localhost:3000/login
     ```
 
 ## Installation
@@ -65,7 +65,10 @@ This is a RESTful API service built with Go-FIBER.
     ```shell
     air
     ```
-5. Generate Unit Test:
+
+### UNIT TEST
+Generate Unit Test:
+   ketika ingin generate masuk ke backend
     - generate coverage
         ```shell
          make test

@@ -4,7 +4,7 @@ import Pagination from "@/components/Pagination";
 // import FormModal from "@/components/FormModal";
 import Table from "@/components/Table";
 import { useCustomers } from "@/hooks/useCustomer";
-import { Filter, Search, SortAsc, View } from "lucide-react";
+import { Filter, Search, SortAsc, User, View } from "lucide-react";
 import moment from "moment";
 // import TableSearch from "@/components/TableSearch";
 import Image from "next/image";
@@ -66,13 +66,9 @@ const CustomerPage = () => {
     
     <tr key={item.id} className="border-b border-gray-200 even:bg-slate-50 text-sm hover:bg-gray-100">
       <td className="flex items-center gap-4 p-4">
-        <Image
-          src="https://images.pexels.com/photos/2888150/pexels-photo-2888150.jpeg?auto=compress&cs=tinysrgb&w=1200"
-          alt=""
-          width={40}
-          height={40}
-          className="md:hidden xl:block w-10 h-10 rounded-full object-cover"
-        />
+        <div className="flex items-center justify-center w-15 h-15 rounded-full bg-green-50">
+          <User size={40}/>
+        </div>
       </td>
       <td className="hidden md:table-cell">{item.full_name}</td>
       <td className="hidden md:table-cell">{item.phone_number}</td>
