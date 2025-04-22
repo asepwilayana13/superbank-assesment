@@ -2,6 +2,12 @@
 
 This is a RESTful API service built with Go-FIBER.
 
+#### Folder
+ | superbank-assesment
+    | document
+    | froentend
+    | backend
+
 ### BACKEND
 
 ## Prerequisites
