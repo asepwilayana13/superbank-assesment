@@ -1,0 +1,79 @@
+basePath: /v1/
+definitions:
+  dto.CreateLoginRequest:
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+    type: object
+  utils.BaseResponse:
+    properties:
+      data: {}
+      errors: {}
+      message:
+        type: string
+      pagination:
+        $ref: '#/definitions/utils.Pagination'
+      status_code:
+        type: integer
+    type: object
+  utils.Pagination:
+    properties:
+      current_page:
+        type: integer
+      items_per_page:
+        type: integer
+      total_items:
+        type: integer
+      total_pages:
+        type: integer
+    type: object
+info:
+  contact:
+    email: support@swagger.io
+    name: API Support
+    url: http://www.swagger.io/support
+  description: This is a sample server Petstore server.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Swagger Example API
+  version: "1.0"
+paths:
+  /auth/login:
+    post:
+      consumes:
+      - application/json
+      description: Melakukan login dengan username dan password
+      parameters:
+      - description: Login Request Body
+        in: body
+        name: data
+        required: true
+        schema:
+          $ref: '#/definitions/dto.CreateLoginRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/utils.BaseResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/utils.BaseResponse'
+        "401":
+          description: Unauthorized
+          schema:
+            $ref: '#/definitions/utils.BaseResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/utils.BaseResponse'
+      summary: Login user
+      tags:
+      - Authentication
+swagger: "2.0"

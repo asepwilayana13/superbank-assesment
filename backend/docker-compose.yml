@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  app:
+    build: 
+      dockerfile: Dockerfile
+      target: final
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=database
+      - DB_PORT=5432
+      - DB_USER=postgres
+      - DB_PASSWORD=130796
+      - DB_NAME=myapp_go
+    depends_on:
+      - database
+
+  database:
+    image: postgres:16-alpine
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 130796
+      POSTGRES_DB: myapp_go
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres-data/myapp_go:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      retries: 5
+      timeout: 5s
+
+volumes:
+  db_data:

@@ -1,0 +1,7 @@
+# Folder & file yang tidak perlu masuk ke image
+.git
+node_modules
+bin
+vendor
+*.log
+.air.temp
