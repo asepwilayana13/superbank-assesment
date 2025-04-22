@@ -1,30 +1,30 @@
-# Gunakan image Golang sebagai base image
-FROM golang:1.23-alpine AS builder
+FROM golang:1.24-alpine AS builder
 
-# Set working directory
 WORKDIR /app
-
 ENV PATH="/go/bin:${PATH}"
-
-COPY docker/entrypoint.sh /docker/entrypoint.sh
-RUN chmod +x /docker/entrypoint.sh
 
 COPY go.mod go.sum ./
 RUN go mod download
 
-# Copy semua file ke container
 COPY . .
+
+COPY docker/entrypoint.sh /docker/entrypoint.sh
+RUN chmod +x /docker/entrypoint.sh
 
 RUN go build -o /app/server ./main.go
 
-FROM golang:1.23-alpine AS final
+FROM alpine:latest AS final
+
 WORKDIR /app
 
-COPY --from=builder /app/server /app/server
-COPY --from=builder /docker/entrypoint.sh /docker/entrypoint.sh
+COPY --from=builder /app/server ./
+COPY --from=builder /docker/entrypoint.sh ./docker/entrypoint.sh
 COPY .env.development .env
+
+RUN chmod +x ./docker/entrypoint.sh
+RUN ls -l ./docker/entrypoint.sh && cat ./docker/entrypoint.sh
+
 
 EXPOSE 8000
 
-ENTRYPOINT ["/docker/entrypoint.sh"]
-
+ENTRYPOINT ["./docker/entrypoint.sh"]

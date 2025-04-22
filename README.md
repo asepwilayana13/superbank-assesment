@@ -23,7 +23,7 @@ This is a RESTful API service built with Go-FIBER.
 1. Clone the repository:
 
     ```shell
-    git clone https://gitlab.smooets.com/aswil/boilerplate-go-gorm-fiber.git
+    git clone https://gitlab.smooets.com/aswil/superbank-assesment.git
     ```
 
 2. Install the dependencies:
@@ -75,9 +75,38 @@ This is a RESTful API service built with Go-FIBER.
 
 
 
-### FRONEND
+### FRONTEND
+## Installation
 
-npm run dev
+1. Clone the repository:
+   ```shell
+    git clone https://gitlab.smooets.com/aswil/superbank-assesment.git
+    ```
+2. Install the dependencies:
 
+    ```shell
+    npm insatall
+    ```
+3. Build and run the application:
 
+    ```shell
+    npm run dev
+    ```
+
+### Docker Setup (Recommended)
+
+1. Step
+   ```shell
+    docker-compose up --build -d
+    ```
+2. URL BACKEND
+
+    ```shell
+    http://localhost:8000
+    ```
+3. URL ENV
+
+    ```shell
+    http://localhost:3000
+    ```
 

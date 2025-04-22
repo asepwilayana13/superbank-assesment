@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   backend:
+    container_name: backend
     build:
       context: ./backend/
       dockerfile: Dockerfile
@@ -29,6 +30,7 @@ services:
       - backend
 
   database:
+    container_name: db
     image: postgres:16-alpine
     restart: always
     environment:
@@ -38,7 +40,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./postgres-data/myapp_go:/var/lib/postgresql/data
+      - db_data:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 10s
@@ -47,3 +49,5 @@ services:
 
 volumes:
   db_data:
+    driver: local
+  
