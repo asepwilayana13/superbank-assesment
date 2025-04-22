@@ -5,7 +5,7 @@ This is a RESTful API service built with Go-FIBER.
 #### Folder
  | superbank-assesment
     | document
-    | froentend
+    | frontend
     | backend
 
 ### BACKEND
@@ -85,7 +85,7 @@ This is a RESTful API service built with Go-FIBER.
 2. Install the dependencies:
 
     ```shell
-    npm insatall
+    npm install
     ```
 3. Build and run the application:
 
