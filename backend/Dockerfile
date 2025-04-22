@@ -24,7 +24,7 @@ COPY --from=builder /app/server /app/server
 COPY --from=builder /docker/entrypoint.sh /docker/entrypoint.sh
 COPY .env.development .env
 
-EXPOSE 5000
+EXPOSE 8000
 
 ENTRYPOINT ["/docker/entrypoint.sh"]
 

@@ -1,12 +1,13 @@
 version: '3.8'
 
 services:
-  app:
-    build: 
+  backend:
+    build:
+      context: ./backend/
       dockerfile: Dockerfile
       target: final
     ports:
-      - "5000:5000"
+      - "8000:8000"
     environment:
       - DB_HOST=database
       - DB_PORT=5432
@@ -15,6 +16,17 @@ services:
       - DB_NAME=myapp_go
     depends_on:
       - database
+
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend/
+      dockerfile: Dockerfile
+      target: final
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
 
   database:
     image: postgres:16-alpine
