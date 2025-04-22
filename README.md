@@ -68,18 +68,21 @@ This is a RESTful API service built with Go-FIBER.
 
 ### UNIT TEST
 Generate Unit Test:
-   ketika ingin generate masuk ke backend
+    - masuk ke folder backend
+       ```shell
+         cd backend
+        ```
     - generate coverage
         ```shell
          make test
         ```
     - coverage per fungsi
          ```shell
-         make test
+         make cover
         ```
     - Buka tampilan HTML coverage
          ```shell
-         make test
+         make cover-html
         ```
 
 
