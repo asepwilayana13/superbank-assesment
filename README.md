@@ -40,7 +40,7 @@ This is a RESTful API service built with Go-FIBER.
 1. Clone the repository:
 
     ```shell
-    git clone https://gitlab.smooets.com/aswil/superbank-assesment.git
+    git clone https://github.com/asepwilayana13/superbank-assesment.git
     ```
 
 2. Install the dependencies:
