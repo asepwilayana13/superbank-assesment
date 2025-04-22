@@ -4,7 +4,7 @@ This is a RESTful API service built with Go-FIBER.
 
 #### Folder
  | superbank-assesment
-    | document
+    | document [user guide aplikasi](document/Readme.md)
     | frontend
     | backend
 
@@ -34,13 +34,25 @@ This is a RESTful API service built with Go-FIBER.
     ```shell
     http://localhost:3000/login
     ```
-
-## Installation
+4. Halaman login admin url (http://localhost:3000/login)
+   - masukan username dan password
+    ```json
+    {
+      username: admin@example.com,
+      password: today1234
+    }
+    ```
+## Manual Installation
 
 1. Clone the repository:
 
     ```shell
     git clone https://github.com/asepwilayana13/superbank-assesment.git
+    ```
+## BACKEND
+1. change directory
+    ```shell
+   cd backend
     ```
 
 2. Install the dependencies:
@@ -65,45 +77,11 @@ This is a RESTful API service built with Go-FIBER.
     ```shell
     air
     ```
-
-### UNIT TEST
-Generate Unit Test:
-    - masuk ke folder backend
-       ```shell
-         cd backend
-        ```
-    - generate coverage
-        ```shell
-         make test
-        ```
-    - coverage per fungsi
-         ```shell
-         make cover
-        ```
-    - Buka tampilan HTML coverage
-         ```shell
-         make cover-html
-        ```
-
-
-## API Endpoints
-- `/v1/auth/login` - POST request to authenticate a user.
-- `/v1/auth/register` - POST request to register a new user.
-- comming soon
-
-## SWAGGER
-
-- [Url] http://localhost:3000/swagger/index.html
-- ['Generate'] swag init -g main.go --output docs
-
-
-
 ### FRONTEND
 ## Installation
-
-1. Clone the repository:
-   ```shell
-    git clone https://gitlab.smooets.com/aswil/superbank-assesment.git
+1. change directory
+    ```shell
+   cd frontend
     ```
 2. Install the dependencies:
 
@@ -115,6 +93,36 @@ Generate Unit Test:
     ```shell
     npm run dev
     ```
+
+## UNIT TEST
+Generate Unit Test:
+  - change folder backend
+    ```shell
+      cd backend
+    ```
+  - generate coverage
+    ```shell
+     make test
+    ```
+  - coverage per fungsi
+    ```shell
+    make cover
+    ```
+  - Generate HTML coverage
+    ```shell
+    make cover-html
+     ```
+
+
+## API Endpoints
+- `/v1/auth/login` - POST request to authenticate a user.
+- `/v1/auth/register` - POST request to register a new user.
+- comming soon
+
+## SWAGGER
+
+- [Url] http://localhost:3000/swagger/index.html
+- ['Generate'] swag init -g main.go --output docs
 
 
 
