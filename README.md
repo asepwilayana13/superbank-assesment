@@ -104,6 +104,14 @@ Generate Unit Test:
     ```shell
      make test
     ```
+  - duplicate
+    ```shell
+     make duplicate
+    ```
+  - filter
+    ```shell
+     make filter
+    ```
   - coverage per fungsi
     ```shell
     make cover
@@ -123,6 +131,10 @@ Generate Unit Test:
 
 - [Url] http://localhost:3000/swagger/index.html
 - ['Generate'] swag init -g main.go --output docs
+
+## DOCS API
+
+- [Url Document Api](document/myapp-go.postman_collection.json)
 
 
 
