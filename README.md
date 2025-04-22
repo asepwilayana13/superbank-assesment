@@ -18,6 +18,23 @@ This is a RESTful API service built with Go-FIBER.
 - [POSTGRES]  (https://www.postgresql.org/download/) - DATABASE
 - [AIR] (go install github.com/cosmtrek/air@latest) - Live Reloading untuk Development
 
+### Docker Setup (Recommended)
+
+1. Step
+   ```shell
+    docker-compose up --build -d
+    ```
+2. URL BACKEND
+
+    ```shell
+    http://localhost:8000
+    ```
+3. URL ENV
+
+    ```shell
+    http://localhost:3000
+    ```
+
 ## Installation
 
 1. Clone the repository:
@@ -93,20 +110,5 @@ This is a RESTful API service built with Go-FIBER.
     npm run dev
     ```
 
-### Docker Setup (Recommended)
 
-1. Step
-   ```shell
-    docker-compose up --build -d
-    ```
-2. URL BACKEND
-
-    ```shell
-    http://localhost:8000
-    ```
-3. URL ENV
-
-    ```shell
-    http://localhost:3000
-    ```
 
